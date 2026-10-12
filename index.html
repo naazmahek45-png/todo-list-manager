@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student To-Do List Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <p class="eyebrow">STUDENT PRODUCTIVITY</p>
+      <h1>To-Do List Manager</h1>
+      <p class="subtitle">Plan your day, one task at a time.</p>
+    </header>
+
+    <form id="task-form" class="task-form">
+      <label class="sr-only" for="task-input">Task name</label>
+      <input id="task-input" type="text" placeholder="What do you need to do?" maxlength="120" required>
+      <label class="sr-only" for="due-date">Due date</label>
+      <input id="due-date" type="date">
+      <button type="submit" id="submit-button">Add task</button>
+    </form>
+
+    <section class="toolbar" aria-label="Task filters">
+      <p id="task-count">0 tasks remaining</p>
+      <div class="filters">
+        <button type="button" class="filter active" data-filter="all">All</button>
+        <button type="button" class="filter" data-filter="active">Active</button>
+        <button type="button" class="filter" data-filter="completed">Completed</button>
+      </div>
+    </section>
+
+    <ul id="task-list" class="task-list" aria-live="polite"></ul>
+    <p id="empty-state" class="empty-state">No tasks yet. Add your first task above!</p>
+    <footer>
+      <span>Tasks are saved in this browser.</span>
+      <button type="button" id="clear-completed" class="text-button">Clear completed</button>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
